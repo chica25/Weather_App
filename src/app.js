@@ -4,8 +4,10 @@ const details = document.querySelector('.details');
 
 const updateUI = (data) => {
 
-    const citySpecs = data.citySpecs;
-    const weather = data.weather
+    // const citySpecs = data.citySpecs;
+    // const weather = data.weather
+
+    const { citySpecs, weather } = data;
 
     details.innerHTML = `
         <h5 class="my-3">${citySpecs.EnglishName}</h5>
