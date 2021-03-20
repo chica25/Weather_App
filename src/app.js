@@ -23,7 +23,7 @@ const updateUI = (data) => {
         const iconSrc = `img/icons/${weather.WeatherIcon}.svg`
         icon.setAttribute('src', iconSrc);
         
-        let timeSource = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg'
+        let timeSource = weather.IsDayTime ? 'illustrations/day.svg' : 'illustrations/night.svg'
         time.setAttribute('src', timeSource);
      
         if(card.classList.contains('d-none')){
@@ -49,5 +49,5 @@ cityForm.addEventListener('submit', e => {
 
     updateCity(city)
     .then(data => updateUI(data))
-    .catch(err => console.log(err));
+    // .catch(err => console.log(err));
 })
