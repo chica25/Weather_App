@@ -4,10 +4,7 @@ const updateCity = async (city) => {
     const citySpecs = await getCity(city);
     const weather = await getWeather(citySpecs.Key);
 
-    return {
-        citySpecs: citySpecs,
-        weather: weather
-    };
+    return { citySpecs, weather };
 };
 
 cityForm.addEventListener('submit', e => {
