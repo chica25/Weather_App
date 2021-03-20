@@ -15,6 +15,11 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>
      `;
+
+     if(card.classList.contains('d-none')){
+         card.classList.remove('d-none');
+     }
+
 };
 
 
@@ -29,11 +34,9 @@ const updateCity = async (city) => {
 cityForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    // get city value
     const city = cityForm.city.value.trim();
     cityForm.reset();
 
-    //update the UI with new city
     updateCity(city)
     .then(data => updateUI(data))
     .catch(err => console.log(err));
