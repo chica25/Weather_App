@@ -1,8 +1,14 @@
 const cityForm = document.querySelector('.change-location');
 
 const updateCity = async (city) => {
-    const cityDetails = await getCity(city);
-}
+    const citySpecs = await getCity(city);
+    const weather = await getWeather(citySpecs.Key);
+
+    return {
+        citySpecs: citySpecs,
+        weather: weather
+    };
+};
 
 cityForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -12,5 +18,7 @@ cityForm.addEventListener('submit', e => {
     cityForm.reset();
 
     //update the UI with new city
-    updateCity(city);
+    updateCity(city)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
